@@ -1,0 +1,25 @@
+234. Palindrome LinkedList:
+Given the head of a singly linked list, return true if it is a palindrome.
+
+
+public boolean isPalindrome(ListNode head){
+    ListNode mid = middleNode(head);
+    ListNode headSecond = reverseList(mid);
+    ListNode reverseHead = headSecond;
+
+//Compare both the halves
+    while (head != null && headSecond != null){
+        if (head.val != headSecond.val){
+            break;
+        }
+        head = head.next;
+        headSecond = headSecond.next;
+    }
+
+    reverseList(reverseHead);
+
+    if (head == null || headSecond == null){
+        return true;
+    }
+    return false;
+}

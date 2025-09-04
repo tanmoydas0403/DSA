@@ -1,0 +1,24 @@
+Find length of the cycle
+
+public boolean lengthCycle(ListNode head){
+        listNode fast = head;
+        listNode slow = head;
+
+        while(fast != null && fast.next !== null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                //Calculate the length
+                ListNode temp = slow;
+                int length = 0;
+                do{
+                    temp = temp.next;
+                    length++;
+                }while (temp != slow)
+                return length;
+            }
+        }
+
+        return 0;
+    }
+}

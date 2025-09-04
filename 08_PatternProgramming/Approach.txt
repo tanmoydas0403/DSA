@@ -1,0 +1,6 @@
+How to approach:
+--------------------
+1. no of lines = no of rows = no of times outer loop will run
+2. identifie for every row number how many column are there or types of 
+element in col.
+3. what do you need to print.

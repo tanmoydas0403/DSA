@@ -1,0 +1,82 @@
+package com.tanmoy.questions.q14;
+
+public class ReverseKGroupMain {
+    public static void main(String[] args) {
+        // Create the linked list: 1 -> 2 -> 3 -> 4 -> 5
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        System.out.println("Original List:");
+        printList(head);
+
+        int k = 2;
+        Solution solution = new Solution();
+        ListNode result = solution.reverseKGroup(head, k);
+
+        System.out.println("Reversed in k-group:");
+        printList(result);
+    }
+
+    static void printList(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || k <= 1) return head;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode groupPrev = dummy;
+
+        while (true) {
+            ListNode kth = getKthNode(groupPrev, k);
+            if (kth == null) break;
+
+            ListNode groupNext = kth.next;
+
+            // Reverse group
+            ListNode prev = groupNext;
+            ListNode curr = groupPrev.next;
+
+            while (curr != groupNext) {
+                ListNode temp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = temp;
+            }
+
+            ListNode temp = groupPrev.next;
+            groupPrev.next = kth;
+            groupPrev = temp;
+        }
+
+        return dummy.next;
+    }
+
+    private ListNode getKthNode(ListNode start, int k) {
+        while (start != null && k > 0) {
+            start = start.next;
+            k--;
+        }
+        return start;
+    }
+}

@@ -1,0 +1,18 @@
+876. Middle of the LinkList
+----------------------------
+Given the head of a singly linked list, return the middle node of the linked
+List.
+if there are two middle nodes, return second middle node.
+
+class Solution{
+    public ListNode middleNode(ListNode head){
+        ListNode s = head;
+        ListNode f = head;
+
+        while(f != null && f.next != null){
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
+}
