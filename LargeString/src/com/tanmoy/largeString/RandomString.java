@@ -1,4 +1,4 @@
-package com.tanmoy;
+package com.tanmoy.largeString;
 
 import java.util.Random;
 
