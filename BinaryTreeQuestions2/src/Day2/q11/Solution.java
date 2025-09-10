@@ -1,4 +1,4 @@
-package q11;
+package Day2.q11;
 
 public class Solution {
 

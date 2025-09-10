@@ -1,4 +1,4 @@
-package q8;
+package Day2.q8;
 
 import java.util.LinkedList;
 import java.util.Queue;

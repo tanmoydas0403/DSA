@@ -1,4 +1,4 @@
-package q10;
+package Day2.q10;
 
 public class Solution {
     public static void main(String[] args) {

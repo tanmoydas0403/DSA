@@ -1,4 +1,4 @@
-package q13;
+package Day2.q13;
 
 class Solution {
     public void flatten(TreeNode root) {

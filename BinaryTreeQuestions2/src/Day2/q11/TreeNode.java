@@ -1,4 +1,4 @@
-package q10;
+package Day2.q11;
 
 class TreeNode {
     int val;

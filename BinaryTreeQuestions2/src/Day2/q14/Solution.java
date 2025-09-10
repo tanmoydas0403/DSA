@@ -1,4 +1,4 @@
-package q14;
+package Day2.q14;
 
 public class Solution {
     public boolean isValidBST(TreeNode root) {
